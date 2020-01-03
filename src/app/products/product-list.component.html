@@ -8,6 +8,7 @@
                 Filter by:
             </div>
             <div class="col-md-4">
+                <!-- two way data binding via [(ngModel)]  -->
                 <input type="text" [(ngModel)]='filteredParams' />
             </div>
         </div>
@@ -58,7 +59,7 @@
                         <td>{{product.productName}}</td>
                         <td>{{product.productCode}}</td>
                         <td>{{product.releaseDate}}</td>
-                        <td>${{product.price}}</td>
+                        <td>{{product.price | currency:'USD':'symbol':'1.2-2'}}</td>
                         <td>{{product.starRating}}</td>
                     </tr>
                 </tbody>
