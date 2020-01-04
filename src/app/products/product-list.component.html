@@ -9,12 +9,12 @@
             </div>
             <div class="col-md-4">
                 <!-- two way data binding via [(ngModel)]  -->
-                <input type="text" [(ngModel)]='filteredParams' />
+                <input type="text" [(ngModel)]='listFilter' />
             </div>
         </div>
         <div class="row"> 
-            <div *ngIf='filteredParams && filteredParams.length>0' class="col-md-6">
-                <h4> Filtered by: {{filteredParams}} </h4>
+            <div *ngIf='listFilter && listFilter.length>0' class="col-md-6">
+                <h4> Filtered by: {{listFilter}} </h4>
             </div>
         </div>
         <div class="table-responsive">
@@ -47,7 +47,7 @@
                 </thead>
                 <tbody>
                     <!-- add things here via components -->
-                    <tr *ngFor='let product of products' >
+                    <tr *ngFor='let product of filteredProducts' >
                         <td >
                             <img *ngIf='showImage'
                             [src]='product.imageUrl'
